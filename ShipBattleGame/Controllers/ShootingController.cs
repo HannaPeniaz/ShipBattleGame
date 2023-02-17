@@ -13,13 +13,13 @@ namespace ShipBattleGame.Controllers
         {
             foreach (var ship in ships)
             {
-                foreach (var shipPoint in ship.Coordinates)
+                foreach (var coordinate in ship.Coordinates)
                 {
-                    var shipDeckIsDestroyed = shotCoordinate.ToUpper() == Enum.GetName(typeof(XCoordinates), shipPoint.X) + shipPoint.Y;
+                    var shipCoordinateIsDestroyed = shotCoordinate.ToUpper() == Enum.GetName(typeof(XCoordinates), coordinate.X) + coordinate.Y;
 
-                    if (shipDeckIsDestroyed)
+                    if (shipCoordinateIsDestroyed)
                     {
-                        BattleField[new Point { X = shipPoint.X, Y = shipPoint.Y }] = "X";
+                        BattleField[new Point { X = coordinate.X, Y = coordinate.Y }] = "X";
                         return ship;
                     }
                 }
@@ -29,11 +29,11 @@ namespace ShipBattleGame.Controllers
 
         public static bool AllShipsAreDestroyed(Dictionary<Point, string> battleFieldWithCoordinates)
         {
-            foreach (var shipPointValue in battleFieldWithCoordinates)
+            foreach (var coordinate in battleFieldWithCoordinates)
             {
-                bool deckIsDestroyed = shipPointValue.Value == "X";
-                bool emptyCell = shipPointValue.Value == "·";
-                if (deckIsDestroyed || emptyCell)
+                bool coordinateIsDestroyed = coordinate.Value == "X";
+                bool emptyCell = coordinate.Value == "·";
+                if (coordinateIsDestroyed || emptyCell)
                 {
                     continue;
                 }

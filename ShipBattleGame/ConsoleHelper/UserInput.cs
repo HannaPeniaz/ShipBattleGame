@@ -33,19 +33,19 @@ namespace ShipBattleGame.ConsoleHelper
 
         private static bool IsUserInputCorrect(string userInput, Dictionary<Point, string> battleFieldWithShips)
         {
-            var isValidInput = false;
+            var isInputCorrect = false;
             foreach (var ship in battleFieldWithShips)
             {
                 if (ship.Value == userInput.ToUpper())
                 {
-                    isValidInput = true;
+                    isInputCorrect = true;
                     break;
                 }
-                isValidInput = false;
+                isInputCorrect = false;
                 continue;
             }
 
-            return isValidInput;
+            return isInputCorrect;
         }
     }
 }
