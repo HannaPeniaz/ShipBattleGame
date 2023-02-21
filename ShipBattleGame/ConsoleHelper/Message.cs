@@ -9,10 +9,5 @@ namespace ShipBattleGame.ConsoleHelper
         {
             Console.WriteLine(message);
         }
-
-        public static void Print(Ship.State status)
-        {
-            Console.WriteLine($"Ship is {status.ToString().ToLower()}!");
-        }
     }
 }

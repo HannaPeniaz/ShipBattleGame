@@ -1,4 +1,5 @@
 ﻿using ShipBattleGame.ConsoleHelper;
+using ShipBattleGame.Models;
 using System;
 
 namespace ShipBattleGame.Controllers
@@ -16,7 +17,7 @@ namespace ShipBattleGame.Controllers
                 {
                     var stateOfShip = shipAfterShooting.GetStateOfShip(shipAfterShooting);
                     BattleFieldController.DisplayAfterShooting();
-                    Message.Print(stateOfShip);
+                    Ship.DisplayState(stateOfShip);
                 }
                 else
                 {

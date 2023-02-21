@@ -1,5 +1,6 @@
 ﻿using ShipBattleGame.Controllers;
 using ShipBattleGame.Structures;
+using System;
 using System.Collections.Generic;
 
 namespace ShipBattleGame.Models
@@ -41,6 +42,11 @@ namespace ShipBattleGame.Models
                 }
             }
             return State.Destroyed;
+        }
+
+        public static void DisplayState(State status)
+        {
+            Console.WriteLine($"Ship is {status.ToString().ToLower()}!");
         }
 
         private List<Point> CreateVerticalShip(int size, Point startPoint)
